@@ -1,0 +1,11 @@
+<br /><br />
+<input type="text" placeholder="Buscar algo" [(ngModel)]="query">
+<br /><br />
+<ng-container *ngFor="let user of friends | search: query; let i = index">
+  <div>
+    <img id="icon-status" src="assets/img/{{user.status}}.png" alt="Logo guayaszinger">
+    <a routerLink="/conversation/{{user.uid}}">
+      {{i+1}}.- {{user.nickName}} - {{user.email}}
+    </a>
+  </div>
+</ng-container>
